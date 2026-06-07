@@ -5,9 +5,9 @@ public:
     vector<int> spiralOrder(vector<vector<int>>& matrix) {
         int n=matrix.size();//row
         int m=matrix[0].size();//column
-        int top=n;
+        int top=0;
         int down=n-1;
-        int left=m;
+        int left=0;
         int right=m-1;
         
         int dir=0;
