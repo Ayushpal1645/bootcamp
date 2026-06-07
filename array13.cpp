@@ -1,39 +1,20 @@
 #include<iostream>
 using namespace std;
-int main(){
-    int n;
-    cin>>n;
-    int arr[100][100]; 
-    for(int i=0;i<n;i++){
-        for(int j=0;j<n;j++){
+ int main(){
+    int r,c;
+    cin>>r>>c;
+    int arr[50][50];
+    for(int i=0;i<r;i++){
+        for(int j=0;j<c;j++){
             cin>>arr[i][j];
         }
     }
-
-    for(int i=0;i<n;i++){
-        int start=0;
-        int end=n-1;
-        while(start<end){
-            swap(arr[i][start],arr[i][end]);
-            start++;
-            end--;
-        }
-    }
-
-    for(int i=0;i<n;i++){
-        int top=0;
-         int bottom=n-1;
-        while(top<bottom){
-            swap(arr[top][i],arr[bottom][i]);
-            top++;
-            bottom--;
-        }
-    }
-    for(int i=0;i<n;i++){
-        for(int j=0;j<n;j++){
+    for(int i=r-1;i>=0;i--){
+        for(int j=c-1;j>=0;j--){
             cout<<arr[i][j]<<" ";
         }
         cout<<endl;
     }
+    return 0;
 
 }
