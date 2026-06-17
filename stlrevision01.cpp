@@ -11,6 +11,15 @@ elements of any data types*/
 //. vector can be used for creating dynamic arrays
 // of char, integer, float and other types
 
+/*Containers can be further classified into 4 types:-
+
+. Sequence Containers : Vector, Deque, List, Forward List, Array
+. Container Adaptors : Stack, Queue, Priority Queue
+. Associative Containers : Set, Multiset, Map, Multimap
+. Unordered Associative Containers : Unordered Set, Unordered Multiset, Unordered Map, Unordered
+Multimap*/
+
+
 /*Algorithms
 
 . Algorithms act on containers. They provide
@@ -310,6 +319,6 @@ vector <int>::iterator it;
 for(it=v1.begin(); it!=v1.end(); it++){
     cout<<*it<<" "; // it will print 1 2 3 4 5
 }
-    
+
 
 */
