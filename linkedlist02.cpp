@@ -60,5 +60,5 @@ return 0;
     //     temp=temp->next;
     // }
 
-    cout<<lengthOfLL(head);
+    // cout<<lengthOfLL(head);
  }

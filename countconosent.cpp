@@ -1,18 +1,46 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
-int main()
-{
-    char s[100];
-    cin >> s;
-    int count = 0;
-    for (int i = 0; s[i] != '\0'; i++)
-    {
-        if (s[i] != 'a' && s[i] != 'i' && s[i] != 'o' && s[i] != 'u' && s[i] != 'A' && s[i] != 'I' && s[i] != 'O' && s[i] != 'U')
-        {
-            count++;
+
+int main(){
+
+    string s;
+    getline(cin,s);
+
+    int vowels = 0;
+    int letters = 0;
+
+    for(char ch : s){
+
+        ch = tolower(ch);
+
+        if(ch>='a' && ch<='z'){
+            letters++;
+
+            if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'){
+                vowels++;
+            }
         }
     }
-    cout << count;
+
+    cout << letters - vowels;
+
     return 0;
 }
 
+
+
+#include<iostream>
+using namespace std;
+int main(){
+    string s;
+    getline(cin,s);
+    int cnt=0;
+    for(char ch:s){
+        ch=tolower(ch);
+        if(ch>='a' && ch<='z' && !(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u')){
+            cnt++;
+        }
+    }
+    cout<<cnt;
+    return 0;
+}

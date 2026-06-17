@@ -39,14 +39,14 @@ for(int i=1;i<=n;i++){
     }
     cout<<endl;
 }
-cout<<endl;
+
 
 /*Character Pyramid
     A
    ABA
   ABCBA
  ABCDCBA
- ABCDEDCBA
+ABCDEDCBA
 
 */
 for(int i=1;i<=n;i++){

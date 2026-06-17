@@ -51,3 +51,31 @@ int main(){
 ****  ****
 **********
 */
+
+
+#include<iostream>
+using namespace std;
+
+int main() {
+    int n = 3;
+
+    for(int block=0; block<n; block++) {
+
+        for(int i=1; i<=n; i++) {
+
+            // spaces
+            for(int s=1; s<=block*3; s++) {
+                cout<<" ";
+            }
+
+            // stars
+            for(int j=1; j<=i; j++) {
+                cout<<"*";
+            }
+
+            cout<<endl;
+        }
+    }
+
+    return 0;
+}

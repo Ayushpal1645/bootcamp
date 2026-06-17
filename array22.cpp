@@ -11,7 +11,7 @@ int main(){
     int j=n-1;
     int maxwater=0;
     while(i<j){
-        int w=j-1;
+        int w=j-i;
         int h=min(v[i],v[j]);
         int area=w*h;
         maxwater=max(maxwater,area);
