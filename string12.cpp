@@ -1,18 +1,18 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-int main(){
+int main()
+{
     string s;
-    cin>>s;
+    cin >> s;
     string goal;
-    cin>>goal;
-    if(s.size()!=goal.size()){
-        cout<<"false";
+    cin >> goal;
+    if (s.size() != goal.size())
+    {
+        cout << "false";
         return 0;
     }
-    string temp=s+s;
-    cout<<(temp.find(goal)!=string::npos?"true":"false");
-   
+    string temp = s + s;
+    cout << (temp.find(goal) != string::npos ? "true" : "false");
+
     return 0;
-
 }
-
