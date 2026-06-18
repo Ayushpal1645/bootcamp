@@ -92,6 +92,7 @@ node *removetail(node *head)
     {
         return NULL;
     }
+
     node *temp = head;
     while (temp->next->next != NULL)
     {
@@ -161,6 +162,90 @@ node *removevalue(node *head, int el)
     }
     return head;
 }
+
+
+
+//INSERSTION
+
+//head
+node* inserthead(node* head, int value){
+    node* temp=new node(value,head);
+    return temp;
+}
+
+
+//last
+node* insertlast(node* head, int value){
+    if(head==NULL){
+        return  new node(value);
+    }
+    node* temp=head;
+    while(temp->next!=NULL){
+        temp=temp->next;
+    }
+    node* newnode=new node(value);
+    temp->next=newnode;
+    return head;
+}
+
+
+//position
+node* insertposition(node* head, int el, int k){
+    if(head==NULL){
+       if(k==1){
+        return new node(el);
+       }
+       else{
+        return head;
+       }
+    }
+    if(k==1){
+        node* newhead=new node(el,head);
+        return newhead;
+    }
+    int cnt=0;
+    node* temp=head;
+    while(temp!=NULL){
+        cnt++;
+        if(cnt==k-1){
+            node* x=new node(el);//node*x =new node(el,temp->next);aise bhi likh skte hai 
+            x->next=temp->next;
+            temp->next=x;
+            break;
+        }
+        temp=temp->next;
+    }
+    return head;
+}
+
+
+
+//value
+node* insertbeforevalue(node* head, int el, int val){
+    if(head==NULL){
+       return NULL;
+       }
+      
+    if(head->data==val){
+        node* newhead=new node(el,head);
+        return newhead;
+    }
+
+    node* temp=head;
+    while(temp->next!=NULL){
+        
+        if(temp->next->data==val){
+            node* x=new node(el);//node*x =new node(el,temp->next);aise bhi likh skte hai 
+            x->next=temp->next;
+            temp->next=x;
+            break;
+        }
+        temp=temp->next;
+    }
+    return head;
+}
+
+
 int main()
 {
     vector<int> arr = {2, 5, 8, 7};
@@ -169,7 +254,15 @@ int main()
     //  head=removetail(head);
 
     //    head=removeposition(head,3);
-    head = removevalue(head, 7);
+    // head = removevalue(head, 7);
+
+
+    // head=insertlast(head,100);
+
+    // head=insertposition(head,100,3);
+
+    head=insertbeforevalue(head,100,8);
+
     print(head);
 
     return 0;
