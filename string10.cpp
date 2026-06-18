@@ -1,33 +1,54 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int compress(string s) {
-    string result = "";
-    int n = s.length();
+int compress(vector<char>& chars) {
+    int n = chars.size();
+    int index = 0;
+    int i = 0;
 
-    for (int i = 0; i < n; ) {
-        char current = s[i];
+    while (i < n) {
+        char current = chars[i];
         int count = 0;
 
-        while (i < n && s[i] == current) {
+        // count duplicates
+        while (i < n && chars[i] == current) {
             count++;
             i++;
         }
 
-        result += current;
+        // store character
+        chars[index] = current;
+        index++;
 
-        if (count > 1)
-            result += to_string(count);
+        // store count
+        if (count > 1) {
+            string c = to_string(count);
+
+            for (char ch : c) {
+                chars[index] = ch;
+                index++;
+            }
+        }
     }
 
-    return result.length();
+    return index;
 }
 
 int main() {
     string s;
     cin >> s;
 
-    cout << compress(s);
+    vector<char> chars(s.begin(), s.end());
+
+    int len = compress(chars);
+
+    cout << "Length = " << len << endl;
+
+    cout << "Compressed String = ";
+
+    for (int i = 0; i < len; i++) {
+        cout << chars[i];
+    }
 
     return 0;
 }
