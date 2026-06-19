@@ -86,6 +86,55 @@ node* deletetail(node* head){
 }
 
 
+
+//delete by positon 
+
+node* deletePosition(node* head, int pos)
+{
+    if(head == NULL)
+        return NULL;
+
+    // delete head
+    if(pos == 1)
+    {
+        node* temp = head;
+        head = head->next;
+
+        if(head != NULL)
+            head->back = NULL;
+
+        delete temp;
+        return head;
+    }
+
+    node* temp = head;
+    int cnt = 1;
+
+    while(temp != NULL && cnt < pos)
+    {
+        temp = temp->next;
+        cnt++;
+    }
+
+    // invalid position
+    if(temp == NULL)
+        return head;
+
+    node* prev = temp->back;
+    node* front = temp->next;
+
+    if(prev != NULL)
+        prev->next = front;
+
+    if(front != NULL)
+        front->back = prev;
+
+    delete temp;
+
+    return head;
+}
+
+
 int main()
 {
     vector<int> arr = {12, 5, 8, 7};
